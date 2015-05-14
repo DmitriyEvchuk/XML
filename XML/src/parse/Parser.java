@@ -30,11 +30,11 @@ public class Parser {
 			System.out.println("in file " + fName + "is syntax error");
 		} 
 		catch (IllegalArgumentException e) {
-			System.out.println(" make sure that path file is right");
+			System.out.println(" error file referens=null");
 		}
 
 		catch (IOException e) {
-			System.out.println("error input output");
+			System.out.println("error input output make shure file path");
 		}
 
 	}
