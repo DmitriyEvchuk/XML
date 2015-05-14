@@ -1,48 +1,93 @@
 package parse;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.*;
+import org.xml.sax.SAXException;
+
+import phonebook.PhoneBook;
 
 public class Parser {
 
 	public Parser(String fName) {
-		XMLfile = (new File(fName));
+		try {
+
+			DocumentBuilderFactory f = DocumentBuilderFactory.newInstance();
+			DocumentBuilder builder = f.newDocumentBuilder();
+			XMLdoc = builder.parse(new File(fName));
+		} catch (ParserConfigurationException e) {
+			throw new RuntimeException(e);
+		}
+
+		catch (SAXException e) {
+			System.out.println("in file " + fName + "is syntax error");
+		} 
+		catch (IllegalArgumentException e) {
+			System.out.println(" make sure that path file is right");
+		}
+
+		catch (IOException e) {
+			System.out.println("error input output");
+		}
+
 	}
 
-	static private TreeMap<String, String> phoneBook = new TreeMap<String, String>();
+	private Document XMLdoc;
 
-	private File XMLfile;
+	public void fiilBook(PhoneBook Book) {
 
-	public Map<String, String> getBook() {
-		return phoneBook;
-	}
+		Contact contact = null;
+		// node with data name and talephone
+		Node data = null;
 
-	public Document parseFile() throws Exception {
+		// lower level tags <name> <phone>
+		NodeList lastChild = null;
 
-		DocumentBuilderFactory f = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = f.newDocumentBuilder();
-		return builder.parse(XMLfile);
+		// medium level tags< <contact>>
+		NodeList child = XMLdoc.getFirstChild().getChildNodes();
 
-	}
+		for (int i = 0; i < child.getLength(); i++) {
 
-	public void fiilBook(Document doc) {
+			Node current = child.item(i);
+			if (current.getNodeType() == Node.ELEMENT_NODE) {
 
-		NodeList name = doc.getElementsByTagName("name");
-		NodeList telephone = doc.getElementsByTagName("phone");
+				if (current.hasChildNodes()) {
 
-		for (int i = 0; i < name.getLength(); i++) {
+					lastChild = current.getChildNodes();
 
-			Node nodName = name.item(i);
-			Node nodPhone = telephone.item(i);
+					for (int j = 0; j < lastChild.getLength(); j++) {
 
-			Parser.phoneBook.put(nodName.getTextContent(),
-					nodPhone.getTextContent());
+						// tag with name or teleohone
+						data = lastChild.item(j);
+
+						if (data.getNodeType() == Node.ELEMENT_NODE) {
+
+							if (data.getNodeName().equals("name")) {
+								contact = new Contact();
+								contact.setAbonName(data.getTextContent());
+
+							}
+
+							if (data.getNodeName().equals("phone"))
+								contact.setAbonPhone(data.getTextContent());
+
+						}
+
+						if ((lastChild.getLength() - 1) == j) {
+							Book.add(contact);
+
+						}
+
+					}
+				}
+			}
 
 		}
 
@@ -51,13 +96,12 @@ public class Parser {
 	public static void main(String[] args) throws Exception {
 
 		Parser parse = new Parser("E:/work/phone.xml");
+		PhoneBook book = new PhoneBook();
 
-		parse.fiilBook(parse.parseFile());
+		parse.fiilBook(book);
 
-		for (String d : Parser.phoneBook.keySet())
-			System.out.println("Name " + d + " Phone "
-					+ Parser.phoneBook.get(d));
-
+		//System.out.println(book);
+	book.view("John Daae");
 	}
 
 }
