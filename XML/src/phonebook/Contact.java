@@ -1,6 +1,7 @@
-package parse;
+package phonebook;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Contact {
@@ -32,3 +33,4 @@ public class Contact {
 	}
 	
 }
+

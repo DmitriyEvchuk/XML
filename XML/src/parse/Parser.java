@@ -12,6 +12,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
+import phonebook.Contact;
 import phonebook.PhoneBook;
 
 public class Parser {
