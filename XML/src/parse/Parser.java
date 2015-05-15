@@ -23,14 +23,14 @@ public class Parser {
 			DocumentBuilderFactory f = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = f.newDocumentBuilder();
 			XMLdoc = builder.parse(new File(fName));
+		
 		} catch (ParserConfigurationException e) {
 			throw new RuntimeException(e);
 		}
 
 		catch (SAXException e) {
 			System.out.println("in file " + fName + "is syntax error");
-		} 
-		catch (IllegalArgumentException e) {
+		} catch (IllegalArgumentException e) {
 			System.out.println(" error file referens=null");
 		}
 
@@ -42,7 +42,7 @@ public class Parser {
 
 	private Document XMLdoc;
 
-	public void fiilBook(PhoneBook Book) {
+	public void fiilBook(PhoneBook book) {
 
 		Contact contact = null;
 		// node with data name and talephone
@@ -82,7 +82,7 @@ public class Parser {
 						}
 
 						if ((lastChild.getLength() - 1) == j) {
-							Book.add(contact);
+							book.add(contact);
 
 						}
 
@@ -101,8 +101,8 @@ public class Parser {
 
 		parse.fiilBook(book);
 
-		//System.out.println(book);
-	book.view("John Daae");
+		// System.out.println(book);
+		book.viewContactPhone("John Daae");
 	}
 
 }
