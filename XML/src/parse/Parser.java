@@ -67,11 +67,14 @@ public class Parser {
 
 						// tag with name or teleohone
 						data = lastChild.item(j);
-
+						
+						if(j==0)
+							contact = new Contact();
+						
 						if (data.getNodeType() == Node.ELEMENT_NODE) {
 
 							if (data.getNodeName().equals("name")) {
-								contact = new Contact();
+								//contact = new Contact();
 								contact.setAbonName(data.getTextContent());
 
 							}
