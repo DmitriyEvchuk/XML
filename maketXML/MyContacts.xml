@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+
+
+
+<MyContacts>
+  
+	<Contact ID="1">
+		
+		<Name>John</Name>
+		<Surname>Dae</Surname>
+		<Phone>567-456-7891</Phone>
+		<DateBirthday>12.12.1985</DateBirthday>
+		<PassportId>1234567NM</PassportId>
+		<TravelPassportId>22334455JI</TravelPassportId>
+		<Citizenship>Ukraine</Citizenship>
+	
+	<Adress>
+		
+		<Town>Chernigov</Town>
+		<Street>Schevchenko</Street>
+		<House>55</House>
+		<Flat>54</Flat>
+	
+	</Adress>
+	
+	</Contact>
+  
+	<InfAboutContact ID="1">
+
+		<Status>friend</Status>
+		<PlaceOfDating>school</PlaceOfDating>		
+		<DateMeet>1992</DateMeet>
+		<Relationship>good</Relationship>
+
+	</InfAboutContact>
+
+	<Contact ID="2">
+		
+		<Name>Facken</Name>
+		<Surname>Bitch</Surname>
+		<Phone>77-83-49</Phone>
+		<DateBirthday>02.06.1970</DateBirthday>
+		<PassportId>563278NM</PassportId>
+		<TravelPassportId>79898775JI</TravelPassportId>
+		<Citizenship>Jude</Citizenship>
+	
+	<Adress>
+		
+		<Town>Chernigov</Town>
+		<Street>Bogenko</Street>
+		<House>35</House>
+		<Flat>1</Flat>
+	
+	</Adress>
+	
+	</Contact>
+  
+	<InfAboutContact ID="2">
+
+		<Status>Colleges</Status>
+		<PlaceOfDating>shop &quot; Silver Gold &quot;</PlaceOfDating>		
+		<DateMeet>2013</DateMeet>
+		<Relationship>hate</Relationship>
+
+	</InfAboutContact>
+
+
+
+
+	<Contact ID="3">
+		
+		<Name>Alco</Name>
+		<Surname>Men</Surname>
+		<Phone>063-308-46-28</Phone>
+		<DateBirthday>04.01.1985</DateBirthday>
+		<PassportId>111111NM</PassportId>
+		<TravelPassportId>2222222JI</TravelPassportId>
+		<Citizenship>Ukraine</Citizenship>
+	
+	<Adress>
+		
+		<Town>Kiselovka</Town>
+		<Street>Ave.Sinyakov</Street>
+		<House>1</House>
+		<Flat>1</Flat>
+	
+	</Adress>
+	
+	</Contact>
+  
+	<InfAboutContact ID="3">
+
+		<Status>friend</Status>
+		<PlaceOfDating>University</PlaceOfDating>		
+		<DateMeet>2002</DateMeet>
+		<Relationship>good</Relationship>
+
+	</InfAboutContact>
+
+
+
+
+
+</MyContacts>
