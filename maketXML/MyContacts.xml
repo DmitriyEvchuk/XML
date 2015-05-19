@@ -4,7 +4,7 @@
 
 <MyContacts>
   
-	<Contact ID="1">
+	<Contact>
 		
 		<Name>John</Name>
 		<Surname>Dae</Surname>
@@ -14,18 +14,16 @@
 		<TravelPassportId>22334455JI</TravelPassportId>
 		<Citizenship>Ukraine</Citizenship>
 	
-	<Adress>
+	<Address>
 		
 		<Town>Chernigov</Town>
 		<Street>Schevchenko</Street>
 		<House>55</House>
 		<Flat>54</Flat>
 	
-	</Adress>
+	</Address>
 	
-	</Contact>
-  
-	<InfAboutContact ID="1">
+	<InfAboutContact>
 
 		<Status>friend</Status>
 		<PlaceOfDating>school</PlaceOfDating>		
@@ -33,8 +31,13 @@
 		<Relationship>good</Relationship>
 
 	</InfAboutContact>
+	
+	
+	</Contact>
+  
+	
 
-	<Contact ID="2">
+	<Contact>
 		
 		<Name>Facken</Name>
 		<Surname>Bitch</Surname>
@@ -44,18 +47,16 @@
 		<TravelPassportId>79898775JI</TravelPassportId>
 		<Citizenship>Jude</Citizenship>
 	
-	<Adress>
+	<Address>
 		
 		<Town>Chernigov</Town>
 		<Street>Bogenko</Street>
 		<House>35</House>
 		<Flat>1</Flat>
 	
-	</Adress>
+	</Address>
 	
-	</Contact>
-  
-	<InfAboutContact ID="2">
+	<InfAboutContact>
 
 		<Status>Colleges</Status>
 		<PlaceOfDating>shop &quot; Silver Gold &quot;</PlaceOfDating>		
@@ -65,9 +66,10 @@
 	</InfAboutContact>
 
 
-
-
-	<Contact ID="3">
+	</Contact>
+  
+	
+	<Contact>
 		
 		<Name>Alco</Name>
 		<Surname>Men</Surname>
@@ -77,18 +79,16 @@
 		<TravelPassportId>2222222JI</TravelPassportId>
 		<Citizenship>Ukraine</Citizenship>
 	
-	<Adress>
+	<Address>
 		
 		<Town>Kiselovka</Town>
 		<Street>Ave.Sinyakov</Street>
 		<House>1</House>
 		<Flat>1</Flat>
 	
-	</Adress>
+	</Address>
 	
-	</Contact>
-  
-	<InfAboutContact ID="3">
+	<InfAboutContact>
 
 		<Status>friend</Status>
 		<PlaceOfDating>University</PlaceOfDating>		
@@ -96,7 +96,12 @@
 		<Relationship>good</Relationship>
 
 	</InfAboutContact>
+	
 
+
+	</Contact>
+  
+	
 
 
 
