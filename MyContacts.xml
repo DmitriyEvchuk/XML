@@ -10,8 +10,8 @@
 		<Surname>Dae</Surname>
 		<Phone>567-456-7891</Phone>
 		<DateBirthday>12.12.1985</DateBirthday>
-		<PassportId>1234567NM</PassportId>
-		<TravelPassportId>22334455JI</TravelPassportId>
+		<Passport Type="local" Id="55555555NM"/>
+  		<Passport Type="foreign" Id="6666666JI"/>
 		<Citizenship>Ukraine</Citizenship>
 	
 	<Address>
@@ -23,14 +23,13 @@
 	
 	</Address>
 	
-	<InfAboutContact>
+	<tags>
 
-		<Status>friend</Status>
-		<PlaceOfDating>school</PlaceOfDating>		
-		<DateMeet>1992</DateMeet>
-		<Relationship>good</Relationship>
-
-	</InfAboutContact>
+		<tag>friend</tag>
+		<tag>University</tag>
+   
+	</tags>
+	
 	
 	
 	</Contact>
@@ -43,8 +42,8 @@
 		<Surname>Bitch</Surname>
 		<Phone>77-83-49</Phone>
 		<DateBirthday>02.06.1970</DateBirthday>
-		<PassportId>563278NM</PassportId>
-		<TravelPassportId>79898775JI</TravelPassportId>
+		<Passport Type="local" Id="3333333NM"/>
+  		<Passport Type="foreign" Id="4444444JI"/>
 		<Citizenship>Jude</Citizenship>
 	
 	<Address>
@@ -56,14 +55,15 @@
 	
 	</Address>
 	
-	<InfAboutContact>
+	
+	<tags>
 
-		<Status>Colleges</Status>
-		<PlaceOfDating>shop &quot; Silver Gold &quot;</PlaceOfDating>		
-		<DateMeet>2013</DateMeet>
-		<Relationship>hate</Relationship>
+		<tag>Colleges</tag>
+		<tag>shop &quot; Silver Gold &quot;</tag>
+   
+	</tags>
 
-	</InfAboutContact>
+
 
 
 	</Contact>
@@ -75,8 +75,8 @@
 		<Surname>Men</Surname>
 		<Phone>063-308-46-28</Phone>
 		<DateBirthday>04.01.1985</DateBirthday>
-		<PassportId>111111NM</PassportId>
-		<TravelPassportId>2222222JI</TravelPassportId>
+		<Passport Type="local" Id="1111111NM"/>
+  		<Passport Type="foreign" Id="22222222JI"/>
 		<Citizenship>Ukraine</Citizenship>
 	
 	<Address>
@@ -88,14 +88,12 @@
 	
 	</Address>
 	
-	<InfAboutContact>
+	<tags>
 
-		<Status>friend</Status>
-		<PlaceOfDating>University</PlaceOfDating>		
-		<DateMeet>2002</DateMeet>
-		<Relationship>good</Relationship>
-
-	</InfAboutContact>
+		<tag>friend</tag>
+		<tag>University</tag>
+   
+	</tags>
 	
 
 
