@@ -113,7 +113,7 @@ public class Parser {
 
 		Parser fill = new Parser();
 		Document doc = fill.createDocument("E:/work/MyContacts.xml");
-		// System.out.println(doc.getDocumentElement().getNodeName());
+		 //System.out.println(doc.getDocumentElement().getNodeName());
 		fill.filledObjects(doc.getDocumentElement(), new ArrayList<Class>(
 				Arrays.asList(Contact.class, Address.class, Tags.class)));
 		// System.out.println(fill.filledObj);
