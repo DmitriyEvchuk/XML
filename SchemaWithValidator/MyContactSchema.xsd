@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+
+<xs:simpleType name="StringType">
+  <xs:restriction base="xs:string"/>
+</xs:simpleType>
+
+<xs:simpleType name="IntType">
+  <xs:restriction base="xs:positiveInteger"/>
+</xs:simpleType>
+
+
+
+<xs:simpleType name="DateType">
+  <xs:restriction base="xs:date"/>
+</xs:simpleType>
+
+
+
+<xs:simpleType name="PassportID">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="([A-Z]{2}[0-9]{6})"/>
+  </xs:restriction>
+</xs:simpleType>
+
+
+<xs:simpleType name="PassportType">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="(local|foreign)"/>
+  </xs:restriction>
+</xs:simpleType>
+
+
+<xs:simpleType name="PhoneType">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="(([0-9]{3})-([0-9]{3})-([0-9]{2})-([0-9]{2}))"/>
+  </xs:restriction>
+</xs:simpleType>
+
+  
+<xs:complexType name="PassportAtr">
+    <xs:attribute name="Type" type="PassportType"/>
+    <xs:attribute name="Id" type="PassportID"/>
+</xs:complexType>
+
+
+  <xs:complexType name="AddressType">
+   <xs:sequence>
+    <xs:element name="Town" type="StringType"/>
+    <xs:element name="Street" type="StringType"/>
+    <xs:element name="House" type="IntType"/>
+    <xs:element name="Flat" type="IntType"/>
+    </xs:sequence>
+   </xs:complexType>
+
+ <xs:complexType name="TagsType">
+   <xs:sequence>
+    <xs:element name="Tag" type="StringType"  maxOccurs="unbounded"/>
+    </xs:sequence>
+   </xs:complexType>
+
+
+
+
+<xs:complexType name="ContactType">
+  <xs:sequence>
+    <xs:element name="Name" type="StringType"/>
+    <xs:element name="Surname" type="StringType"/>
+    <xs:element name="Phone" type="PhoneType"/>
+    <xs:element name="DateBirthday" type="DateType"/>
+    <xs:element name="Passport" type="PassportAtr"/>
+    <xs:element name="Passport" type="PassportAtr"  minOccurs="0"/>
+    <xs:element name="Citizenship" type="StringType"/>
+    <xs:element name="Address" type="AddressType"/>
+     <xs:element name="Tags" type="TagsType"/>
+  </xs:sequence>
+</xs:complexType>
+
+
+<xs:complexType name="MyContactsType">
+   <xs:sequence>
+    <xs:element name="Contact" type="ContactType"  maxOccurs="unbounded"/>
+   </xs:sequence>
+</xs:complexType>
+
+ <xs:element name="MyContacts" type="MyContactsType"/>
+
+</xs:schema>
