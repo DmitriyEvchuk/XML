@@ -41,8 +41,8 @@
 
   
 <xs:complexType name="PassportAtr">
-    <xs:attribute name="Type" type="PassportType"/>
-    <xs:attribute name="Id" type="PassportID"/>
+    <xs:attribute name="Type" type="PassportType" use="required"/>
+    <xs:attribute name="Id" type="PassportID" use="required"/>
 </xs:complexType>
 
 
