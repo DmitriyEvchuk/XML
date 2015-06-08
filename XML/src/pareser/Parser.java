@@ -121,7 +121,7 @@ public class Parser {
 		List<Contact> myContact = new ArrayList<Contact>();
 		Contact testContact = null;
 
-		for (int i = 0; i < fill.filledObj.size(); i++) {
+		/*for (int i = 0; i < fill.filledObj.size(); i++) {
 
 			if (fill.filledObj.toArray()[i] instanceof Contact) {
 				testContact = (Contact) fill.filledObj.toArray()[i];
@@ -135,7 +135,7 @@ public class Parser {
 			}
 			if (testContact.getTegs() != null)
 				myContact.add(testContact);
-		}
+		}*/
 
 		System.out.println(myContact);
 

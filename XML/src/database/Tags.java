@@ -1,16 +1,24 @@
 package database;
 
+
+import java.util.HashSet;
+import java.util.Set;
+
 public class Tags {
 
+	private Set<String> listTegs = new HashSet<String>();
 
-private String who;
-private String where;
+	public String toString() {
 
+		return "" + listTegs;
+	}
 
-public String toString(){
-	
-	return who+" "+where;
-	
-}
+	public Set<String> getListTegs() {
+		return listTegs;
+	}
+
+	public void addTegs(String tagsName) {
+		listTegs.add(tagsName);
+	}
 
 }

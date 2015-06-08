@@ -6,6 +6,7 @@ import java.util.*;
 import javax.swing.text.html.HTML.Tag;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -43,10 +44,18 @@ public class NewParser {
 
 		NodeList child = current.getChildNodes();
 
+		LinkedList<Node> childList = new LinkedList<Node>();
+
+		for (int i = 0; i < child.getLength(); i++) {
+
+			childList.add(child.item(i));
+
+		}
+
 		Integer fieldIndx = 0;
 		for (int i = 0; i < child.getLength(); i++) {
 
-			Node currentChild = child.item(i);
+			Node currentChild = childList.poll();// child.item(i);
 
 			if (currentChild.getNodeType() == Node.ELEMENT_NODE) {
 
@@ -66,11 +75,16 @@ public class NewParser {
 					continue;
 				}
 
-				field[fieldIndx].setAccessible(true);
-				field[fieldIndx].set(filledObject,
-						currentChild.getTextContent());
-				fieldIndx++;
+				if (isCollection(field[fieldIndx])) {
+					
+					fieldIndx++;
+				} else {
 
+					field[fieldIndx].setAccessible(true);
+					field[fieldIndx].set(filledObject,
+							currentChild.getTextContent());
+					fieldIndx++;
+				}
 			}
 
 		}
@@ -78,23 +92,50 @@ public class NewParser {
 		return filledObject;
 	}
 
-	
+	static boolean isCollection(Field field) {
+
+		if (Collection.class.isAssignableFrom(field.getType()))
+			return true;
+
+		return false;
+	}
+
 	public static void main(String[] args) throws InstantiationException,
 			IllegalAccessException {
 
 		Parser fill = new Parser();
-		fill.createDocument("E:/work/MyContacts.xml");
+		NodeList a = fill.createDocument("E:/work/MyContacts.xml")
+				.getElementsByTagName("Passport");
 
-		@SuppressWarnings("unchecked")
-		List<Contact> contact = filledObjects(
-				fill.createDocument("E:/work/MyContacts.xml"),
-				new LinkedList<String>(Arrays.asList("Contact", "Address",	"Tags")),
-				new LinkedList<Class>(Arrays.asList(Contact.class,
-						Address.class, Tags.class)));
+		// for(int i=0;i<a.getLength();i++){
 
-		for (Contact c : contact) {
-			System.out.println(c);
+		Node b = a.item(0);
+		// /System.out.println(b.hasChildNodes());
+		NamedNodeMap ba = b.getAttributes();
+
+		// System.out.println(ba.getNamedItem("Type").getTextContent());
+
+		for (int j = 0; j < ba.getLength(); j++) {
+			Node c = ba.item(j);
+
+			System.out.println(c.getNodeName());
+
 		}
+		// }
+
+		// „тобы работало нужно научить заполн€ть списки
+		/*
+		 * Parser fill = new Parser();
+		 * fill.createDocument("E:/work/MyContacts.xml");
+		 * 
+		 * @SuppressWarnings("unchecked") List<Contact> contact = filledObjects(
+		 * fill.createDocument("E:/work/MyContacts.xml"), new
+		 * LinkedList<String>(Arrays.asList("Contact", "Address", "Tags")), new
+		 * LinkedList<Class>(Arrays.asList(Contact.class, Address.class,
+		 * Tags.class)));
+		 * 
+		 * for (Contact c : contact) { System.out.println(c); }
+		 */
 
 	}
 }
