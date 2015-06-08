@@ -19,7 +19,7 @@ import database.Tags;
 public class DOMParser {
 
 	private List<Contact> contacts = new ArrayList<Contact>();
-	private QuickSearch quickSearch = new QuickSearch();
+	final public QuickSearch quickSearch = new QuickSearch();
 
 	public void parse(String fileSourceName) {
 
