@@ -15,7 +15,7 @@ public class Contact {
 	public String toString() {
 
 		return " name " + name + " surname " + surname + " citizenship "
-				+ citizenship + " passportLocal " + passportLocal
+				+ citizenship +" phone "+phone+ " passportLocal " + passportLocal
 				+ " passportForeign " + passportForeign + "  address "
 				+ address + "\n" + " tegs " + teg + "\n";
 
